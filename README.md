@@ -89,7 +89,8 @@ python client.py --client-id 1 --data-dir "path/to/dataset" --server-address "lo
 python client.py --client-id 2 --data-dir "path/to/dataset" --server-address "localhost:8080"
 ````
 
-📈 Outputs & Results
+### 📈 Outputs & Results
+```text
 Results are saved in the Result directory, organized by session timestamp.
 
 Result/FLResult/ (Server Outputs):
@@ -107,8 +108,10 @@ xai/: Contains Grad-CAM++ overlays with Deletion AUC scores.
 metrics/: Confusion matrices and classification reports.
 
 checkpoints/: Local best model weights.
+```
 
-🧠 Explainable AI (XAI) Details
+### 🧠 Explainable AI (XAI) Details
+```text
 The client performs a "faithfulness probe" on the validation set during evaluation:
 
 Grad-CAM++: Generates a heatmap highlighting important regions.
@@ -118,3 +121,4 @@ Deletion AUC: Progressively removes high-activation pixels and measures the drop
 Lower Score (< 0.3): High faithfulness (the model is truly looking at the tumor).
 
 Higher Score (> 0.7): Low faithfulness (the model might be looking at background noise).
+```
